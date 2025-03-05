@@ -2,7 +2,6 @@
 // ITMD 541-02 Graduate Student
 
 //Exercise #1
-
 //This part will look at the numbers of the array and analyze them
 function minMaxAverage(numbers) {
     let totalNumbers = numbers.length;
@@ -27,7 +26,7 @@ let testArray1 = [2, 5, 23, 6, 9, 4, 30, 1];
 let testArray2 = [1, 5, 3, 5, 10, 12, 8, 6];
 let testArray3 = [7, 14, 2, 9, 21, 3, 11, 5];
 
-console.log("// Running Test Cases:");
+console.log("\nExercise #1");
 minMaxAverage(testArray1);
 minMaxAverage(testArray2);
 minMaxAverage(testArray3);
@@ -37,8 +36,6 @@ minMaxAverage(testArray3);
 
 
 //Exercise #2
-
-
 // Finding the count of vowels in a string
 function countVowels(word) {
     let vowels = "aeiouAEIOU"; //defining vowels
@@ -56,12 +53,15 @@ function countVowels(word) {
 }
 
 //Test Cases
+console.log("\nExercise #2");
 countVowels("Winter");
 countVowels("January");
 countVowels("August");
 
-//Exercise #3 
 
+
+
+//Exercise #3 
 //Sorting the array
 
 function sortNumbers(numbers) {
@@ -70,9 +70,14 @@ function sortNumbers(numbers) {
 }
 
 //Test Cases
+console.log("\nExercise #3");
 sortNumbers([9, 4, 6, 2]);
 sortNumbers([7, 1, 5, 9, 2, 8]);  
 sortNumbers([-10, 20, 0, -5, 15]);
+
+
+
+
 
 //Exercise #4 
 // Converts Celsius to Fahrenheit 
@@ -84,5 +89,12 @@ function celsiusToFahrenheit(celsius) {
 }
 
 // Test Cases
-console.log("\nExercise 4");
+console.log("\nExercise #4");
 ["30", -10, 100, "35", "-5", "abc"].forEach(celsiusToFahrenheit);
+
+//Exercise #5
+function sortPeopleByAge(people) {
+    return people
+        .sort((a, b) => a.age - b.age) // Sort people by age (ascending order)
+        .map(person => `${person.name} is ${person.age} and from ${person.city}`); // Format output
+}
