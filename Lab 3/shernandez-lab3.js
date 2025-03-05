@@ -10,6 +10,25 @@ function minMaxAverage(numbers) {
     let maxValue = Math.max(...numbers);
     let average = numbers.reduce((sum,num) => sum + num, 0) / totalNumbers;
 
-    console.log('Total Numbers: ${total Numbers}, Min Value: ${minValue}, Max Value: ${maxValue}, Average: ${average.toFixed(2)}');
+    
  // It will find the amount of numbers, smallest value, largest value, and average value   
+    console.log(
+        `Total Numbers: ${totalNumbers}, ` +
+        `Min Value: ${minValue}, ` +
+        `Max Value: ${maxValue}, ` +
+        `Average: ${average}`
+    );   
+
 }
+
+//Test Cases
+let testArray1 = [2, 5, 23, 6, 9, 4, 30, 1];
+let testArray2 = [1, 5, 3, 5, 10, 12, 8, 6];
+let testArray3 = [7, 14, 2, 9, 21, 3, 11, 5];
+
+// 
+console.log("// Running Test Cases:");
+minMaxAverage(testArray1);
+minMaxAverage(testArray2);
+minMaxAverage(testArray3);
+
