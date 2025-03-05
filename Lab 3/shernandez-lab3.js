@@ -69,3 +69,7 @@ function sortNumbers(numbers) {
     console.log(`Original Array: [${numbers}]  Output Sorted Array: [${sortedArray}]`);
 }
 
+//Test Cases
+sortNumbers([9, 4, 6, 2]);
+sortNumbers([7, 1, 5, 9, 2, 8]);  
+sortNumbers([-10, 20, 0, -5, 15]);
