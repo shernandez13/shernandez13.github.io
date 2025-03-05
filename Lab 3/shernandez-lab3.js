@@ -22,6 +22,7 @@ function minMaxAverage(numbers) {
 }
 
 //Test Cases
+
 let testArray1 = [2, 5, 23, 6, 9, 4, 30, 1];
 let testArray2 = [1, 5, 3, 5, 10, 12, 8, 6];
 let testArray3 = [7, 14, 2, 9, 21, 3, 11, 5];
@@ -49,12 +50,22 @@ function countVowels(word) {
         }
     }
 
-    console.log('${word}: ${count} vowels');
+    console.log(`${word}: ${count} vowels`);
 
 
 }
 
 //Test Cases
-countVowels("October");
+countVowels("Winter");
 countVowels("January");
 countVowels("August");
+
+//Exercise #3 
+
+//Sorting the array
+
+function sortNumbers(numbers) {
+    let sortedArray = [...numbers].sort((a, b) => a - b); // Copy the array and sort it
+    console.log(`Original Array: [${numbers}]  Output Sorted Array: [${sortedArray}]`);
+}
+
