@@ -73,3 +73,14 @@ function sortNumbers(numbers) {
 sortNumbers([9, 4, 6, 2]);
 sortNumbers([7, 1, 5, 9, 2, 8]);  
 sortNumbers([-10, 20, 0, -5, 15]);
+
+//Exercise #4 
+function celsiusToFahrenheit(celsius) {
+    let c = parseFloat(celsius);
+    if (isNaN(c)) return console.log(`Invalid input: "${celsius}" is not a number.`);
+    console.log(`${c.toFixed(1)} Celsius = ${(c * 9/5 + 32).toFixed(1)} Fahrenheit`);
+}
+
+// Test Cases
+console.log("\n=== Exercise 4: Celsius to Fahrenheit ===");
+["30", -10, 100, "35", "-5", "abc"].forEach(celsiusToFahrenheit);
