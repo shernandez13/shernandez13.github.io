@@ -111,6 +111,7 @@ function sortPeopleByAge(people) {
 }
 
 //Test Cases for arrays
+//First test array (5 different people)
 const people1 = [
     { name: "Joseph", age: 25, city: "Portland" },
     { name: "Emily", age: 21, city: "Chicago" },
@@ -128,7 +129,17 @@ const people2 = [
     { name: "Victoria", age: 32, city: "Seattle" }
 ];
 
+// Third test array (5 different people)
+const people3 = [
+    { name: "Francis", age: 22, city: "New Orleans" },
+    { name: "Carmen", age: 31, city: "Colorado Springs" },
+    { name: "Darren", age: 28, city: "Memphis" },
+    { name: "Skittles", age: 19, city: "Milwaukee" },
+    { name: "Scarlett", age: 17, city: "Orlando" },
+];
+
 //Running test cases 
 console.log("\nExercise #5");
 console.log("Test Case 1:", sortPeopleByAge(people1));
 console.log("Test Case 2:", sortPeopleByAge(people2));
+console.log("Test Case 3:", sortPeopleByAge(people3));
