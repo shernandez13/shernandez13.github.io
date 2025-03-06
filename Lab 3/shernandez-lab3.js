@@ -98,3 +98,37 @@ function sortPeopleByAge(people) {
         .sort((a, b) => a.age - b.age) // Sort people by age (ascending order)
         .map(person => `${person.name} is ${person.age} and from ${person.city}`); // Format output
 }
+
+
+
+
+//Exercise #5
+
+function sortPeopleByAge(people) {
+    return people
+        .sort((a, b) => a.age - b.age) // Sort people by age in ascending order
+        .map(person => `${person.name} is ${person.age} and from ${person.city}`); // Format the output
+}
+
+//Test Cases for arrays
+const people1 = [
+    { name: "Joseph", age: 25, city: "Portland" },
+    { name: "Emily", age: 21, city: "Chicago" },
+    { name: "Charlie", age: 30, city: "New York" },
+    { name: "David", age: 35, city: "Los Angeles" },
+    { name: "Wendy", age: 27, city: "Philidephia" }
+];
+
+// Second test array (5 different people)
+const people2 = [
+    { name: "Akira", age: 40, city: "Denver" },
+    { name: "Samuel", age: 18, city: "San Diego" },
+    { name: "Morgan", age: 21, city: "Miami" },
+    { name: "Xandra", age: 27, city: "Boston" },
+    { name: "Victoria", age: 32, city: "Seattle" }
+];
+
+//Running test cases 
+console.log("\nExercise #5");
+console.log("Test Case 1:", sortPeopleByAge(people1));
+console.log("Test Case 2:", sortPeopleByAge(people2));
