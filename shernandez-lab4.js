@@ -21,4 +21,25 @@
       heroSection.style.backgroundSize = "cover";
       heroSection.style.backgroundPosition = "center";
     }
-  })();
+
+  // 4. Change the navbar background color to match the footer's background
+  const footer = document.querySelector("footer");
+  const nav = document.querySelector("nav");
+
+  if (footer && nav) {
+    const footerBgColor = getComputedStyle(footer).backgroundColor;
+    nav.style.backgroundColor = footerBgColor;
+  }
+
+  // 5. Remove the "Get Started" CTA from the hero section
+  const ctaButton = document.querySelector("header a.btn");
+  if (ctaButton) {
+    ctaButton.remove();
+  }
+
+  // 6. Center align the heading text in Services, Solutions, and Contact sections
+  const sectionHeadings = document.querySelectorAll("section h2");
+  sectionHeadings.forEach(heading => {
+    heading.style.textAlign = "center";
+}  
+  ();
