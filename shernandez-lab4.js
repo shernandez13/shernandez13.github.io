@@ -3,10 +3,7 @@
 
 (function() {
   // 1. Change the main headline text in the hero section
-  const mainHeadline = document.querySelector("#hero h1");
-  if (mainHeadline) {
-    mainHeadline.textContent = "Uplift Your Brand with Stellar Marketing";
-  }
+  document.querySelector('#hero h1').textContent = "Uplift Your Brand with Stellar Marketing";
 
   // 2. Change the line of text below the hero headline
   const subHeadline = document.querySelector("#hero p");
