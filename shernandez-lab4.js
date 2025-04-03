@@ -32,45 +32,63 @@
     });
   }
 
-  // 5. Remove the "Get Started" CTA from the hero section
-  const ctaButton = document.querySelector("#hero a.btn");
-  if (ctaButton) {
-    ctaButton.remove();
-  }
-
-  // 6. Center align the heading text in Services, Solutions, and Contact sections
-  const headings = document.querySelectorAll("section h2");
-  headings.forEach(h2 => h2.style.textAlign = "center");
-
-  // 7. Change icon color in the services section to #47C714
-  const serviceIcons = document.querySelectorAll(".services .material-symbols-outlined");
-  serviceIcons.forEach(icon => icon.style.color = "#47C714");
-
-  // 8. Change the Digital Marketing icon to "ads_click"
-  const digitalMarketingIcon = document.querySelector(".services .material-symbols-outlined");
-  if (serviceIcons.length > 0) {
-    serviceIcons[0].textContent = "ads_click"
-  }
-
-  // 9. Update tile layout to 4 columns across at ≥1024px
-  const customStyle = document.createElement("style");
-  customStyle.textContent = `
-    @media screen and (min-width: 1024px) {
-      .solutions .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr) !important;
-        gap: 1rem;
-      }
+  function updateNavBarColor() {
+    //change navbar
+    const nav = document.querySelector('nav'); // fixed to properly target the navbar
+    const footer = document.querySelector('footer');
+    if (nav && footer) {
+      const footerBg = getComputedStyle(footer).backgroundColor;
+      nav.style.backgroundColor = footerBg;
     }
-  `;
-  document.head.appendChild(styleTag);
-
-  // 10. Change the Musicians image in the Specialized Marketing Solutions section
-  const musicianImg = Array.from(document.querySelectorAll(".solutions img"))
-    .find(img => img.alt.toLowerCase().includes("musicians"));
-  if (musicianImg) {
-    musicianImg.src = "https://picsum.photos/id/453/400/300";
   }
+
+  function updateSectionHeadings() {
+    // 6. Center-align section headings in Services, Solutions, and Contact sections
+    const headings = document.querySelectorAll('section h2');
+    headings.forEach(heading => {
+      const text = heading.textContent.trim();
+      if (["Services", "Solutions", "Contact"].includes(text)) {
+        heading.style.textAlign = "center";
+      }
+    });
+  }
+
+  function updateServiceIcons() {
+    // 7. Change the icon colors in the services section to light green (#47C714)
+    const icons = document.querySelectorAll('.services .material-symbols-outlined');
+    icons.forEach(icon => icon.style.color = '#47C714');
+  }
+
+  function updateDigitalMarketingIcon() {
+    // 8. Change the Digital Marketing icon to the "ads_click" material icon
+    const icons = document.querySelectorAll('.services .material-symbols-outlined');
+    icons.forEach(icon => {
+      if (icon.parentElement.textContent.toLowerCase().includes('digital marketing')) {
+        icon.textContent = 'ads_click';
+      }
+    });
+  }
+
+  function updateSolutionsLayout() {
+    // 9. Change layout in Specialized Marketing Solutions to 4 tiles across at wider screen sizes
+    const container = document.querySelector('div[data-section="product_cards"]');
+    if (container) {
+      container.classList.remove('grid-cols-1', 'md:grid-cols-2');
+      container.style.display = 'grid';
+      container.style.gridTemplateColumns = 'repeat(4, 1fr)';
+    }
+  }
+
+  function updateMusiciansImage() {
+    // 10. Update the Musicians tile image to a new image
+    const images = document.querySelectorAll('div[data-section="product_cards"] img');
+    images.forEach(img => {
+      if (img.alt.trim().toLowerCase() === "musicians") {
+        img.src = "https://picsum.photos/id/453/400/300";
+      }
+    });
+  }
+
 
   // 11–12. Handle form submission and validation
   const contactForm = document.querySelector("form");
