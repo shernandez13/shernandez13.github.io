@@ -2,58 +2,62 @@
 // ITMD 541-02 Graduate Student
 
 (function() {
-    // 1. Change the main headline text in the hero section
-    const mainHeadline = document.querySelector("header .container h1");
-    if (mainHeadline) {
-      mainHeadline.textContent = "Uplift Your Brand with Stellar Marketing";
-    }
-    // 2. Change the line of text below the hero headline
-    const subHeadline = document.querySelector("header .container p");
-    if (subHeadline) {
-      subHeadline.innerHTML = `Utilize cutting-edge strategies from Stellar Marketing to help your business <strong><em>thrive and excel.</em></strong>`;
-    }
-    // 3. Change the background image in the hero section
-    const hero = document.querySelector("header");
-    if (hero) {
-      heroSection.style.backgroundImage = "url('https://picsum.photos/id/683/1280/720')";
-      heroSection.style.backgroundSize = "cover";
-      heroSection.style.backgroundPosition = "center";
-    }
-    // 4. Change the navbar background color to match the footer's background
-    const footer = document.querySelector("footer");
-    const nav = document.querySelector("nav");
-    if (footer && nav) {
-      const footerBgColor = getComputedStyle(footer).backgroundColor;
-      nav.style.backgroundColor = footerBgColor;
-    }
-    // 5. Remove the "Get Started" CTA from the hero section
-    const ctaButton = document.querySelector("header a.btn");
-    if (ctaButton) {
-      ctaButton.remove();
-    }
-    // 6. Center align the heading text in Services, Solutions, and Contact sections
-    const sectionHeadings = document.querySelectorAll("section h2");
-    sectionHeadings.forEach(heading => {
-      heading.style.textAlign = "center";
-    });
-    // 7. Change icon color in the services section to #47C714
-    const serviceIcons = document.querySelectorAll(".material-symbols-outlined");
-    serviceIcons.forEach(icon => {
-      icon.style.color = "#47C714";
-    });  
+  // 1. Change the main headline text in the hero section
+  const mainHeadline = document.querySelector("#hero h1");
+  if (mainHeadline) {
+    mainHeadline.textContent = "Uplift Your Brand with Stellar Marketing";
+  }
 
-    // 8. Change the Digital Marketing icon to "ads_click"
-    const digitalMarketingIcon = document.querySelector(".services .material-symbols-outlined");
-    if (digitalMarketingIcon) {
-      digitalMarketingIcon.textContent = "ads_click";
-    }
+  // 2. Change the line of text below the hero headline
+  const subHeadline = document.querySelector("#hero p");
+  if (subHeadline) {
+    subHeadline.innerHTML = `Utilize cutting-edge strategies from Stellar Marketing to help your business <strong><em>thrive and excel.</em></strong>`;
+  }
+
+  // 3. Change the background image in the hero section
+  const heroSection = document.querySelector("#hero");
+  if (heroSection) {
+    heroSection.style.backgroundImage = "url('https://picsum.photos/id/683/1280/720')";
+    heroSection.style.backgroundSize = "cover";
+    heroSection.style.backgroundPosition = "center";
+  }
+
+  // 4. Change the navbar background color to match the footer's background
+  const nav = document.querySelector("nav");
+  const footer = document.querySelector("footer");
+  if (nav && footer) {
+    const footerBg = getComputedStyle(footer).backgroundColor;
+    nav.style.backgroundColor = footerBg;
+  }
+
+  // 5. Remove the "Get Started" CTA from the hero section
+  const ctaButton = document.querySelector("#hero a.btn");
+  if (ctaButton) {
+    ctaButton.remove();
+  }
+
+  // 6. Center align the heading text in Services, Solutions, and Contact sections
+  const headings = document.querySelectorAll("section h2");
+  headings.forEach(h2 => h2.style.textAlign = "center");
+
+  // 7. Change icon color in the services section to #47C714
+  const serviceIcons = document.querySelectorAll(".services .material-symbols-outlined");
+  serviceIcons.forEach(icon => icon.style.color = "#47C714");
+
+  // 8. Change the Digital Marketing icon to "ads_click"
+  const digitalMarketingIcon = document.querySelector(".services .material-symbols-outlined");
+  if (serviceIcons.length > 0) {
+    serviceIcons[0].textContent = "ads_click"
+  }
 
   // 9. Update tile layout to 4 columns across at ≥1024px
-  const styleTag = document.createElement("style");
-  styleTag.textContent = `
+  const customStyle = document.createElement("style");
+  customStyle.textContent = `
     @media screen and (min-width: 1024px) {
       .solutions .grid {
+        display: grid;
         grid-template-columns: repeat(4, 1fr) !important;
+        gap: 1rem;
       }
     }
   `;
