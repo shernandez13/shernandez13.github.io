@@ -26,6 +26,20 @@
       const footerBgColor = getComputedStyle(footer).backgroundColor;
       nav.style.backgroundColor = footerBgColor;
     }
-
+    // 5. Remove the "Get Started" CTA from the hero section
+    const ctaButton = document.querySelector("header a.btn");
+    if (ctaButton) {
+      ctaButton.remove();
+    }
+    // 6. Center align the heading text in Services, Solutions, and Contact sections
+    const sectionHeadings = document.querySelectorAll("section h2");
+    sectionHeadings.forEach(heading => {
+      heading.style.textAlign = "center";
+    });
+    // 7. Change icon color in the services section to #47C714
+    const serviceIcons = document.querySelectorAll(".material-symbols-outlined");
+    serviceIcons.forEach(icon => {
+      icon.style.color = "#47C714";
+    });  
 
 })();
