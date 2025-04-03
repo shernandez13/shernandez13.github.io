@@ -42,4 +42,28 @@
       icon.style.color = "#47C714";
     });  
 
+    // 8. Change the Digital Marketing icon to "ads_click"
+    const digitalMarketingIcon = document.querySelector(".services .material-symbols-outlined");
+    if (digitalMarketingIcon) {
+      digitalMarketingIcon.textContent = "ads_click";
+    }
+
+  // 9. Update tile layout to 4 columns across at ≥1024px
+  const styleTag = document.createElement("style");
+  styleTag.textContent = `
+    @media screen and (min-width: 1024px) {
+      .solutions .grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+      }
+    }
+  `;
+  document.head.appendChild(styleTag);
+
+  // 10. Change the Musicians image in the Specialized Marketing Solutions section
+  const musicianImg = Array.from(document.querySelectorAll(".solutions img"))
+    .find(img => img.alt.toLowerCase().includes("musicians"));
+  if (musicianImg) {
+    musicianImg.src = "https://picsum.photos/id/453/400/300";
+  }
+ 
 })();
