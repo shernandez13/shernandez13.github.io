@@ -3,18 +3,18 @@
 
 (function() {
     // 1. Change the main headline text in the hero section
-    const mainHeadline = document.querySelector("header h1");
+    const mainHeadline = document.querySelector("header .container h1");
     if (mainHeadline) {
       mainHeadline.textContent = "Uplift Your Brand with Stellar Marketing";
     }
     // 2. Change the line of text below the hero headline
-    const subHeadline = document.querySelector("header p");
+    const subHeadline = document.querySelector("header .container p");
     if (subHeadline) {
       subHeadline.innerHTML = `Utilize cutting-edge strategies from Stellar Marketing to help your business <strong><em>thrive and excel.</em></strong>`;
     }
     // 3. Change the background image in the hero section
-    const heroSection = document.querySelector("header");
-    if (heroSection) {
+    const hero = document.querySelector("header");
+    if (hero) {
       heroSection.style.backgroundImage = "url('https://picsum.photos/id/683/1280/720')";
       heroSection.style.backgroundSize = "cover";
       heroSection.style.backgroundPosition = "center";
@@ -78,7 +78,7 @@
       const name = nameInput?.value.trim();
       const email = emailInput?.value.trim();
 
-      if (name && email) {
+      if (name && email) { 
         alert(`Thank you, ${name}! We will be in touch with you shortly at ${email}.`);
       } else {
         alert("Please provide a name and email.");
