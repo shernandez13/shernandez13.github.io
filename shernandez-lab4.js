@@ -34,7 +34,7 @@
 
   function updateNavBarColor() {
     //change navbar
-    const nav = document.querySelector('nav'); // fixed to properly target the navbar
+    const nav = document.querySelector('header'); // fixed to properly target the navbar
     const footer = document.querySelector('footer');
     if (nav && footer) {
       const footerBg = getComputedStyle(footer).backgroundColor;
@@ -44,7 +44,7 @@
 
   function updateSectionHeadings() {
     // 6. Center-align section headings in Services, Solutions, and Contact sections
-    const headings = document.querySelectorAll('section h2');
+    const headings = document.querySelectorAll('nav');
     headings.forEach(heading => {
       const text = heading.textContent.trim();
       if (["Services", "Solutions", "Contact"].includes(text)) {
@@ -89,25 +89,37 @@
     });
   }
 
+  function validateContactForm() {
+    // 11 & 12. Graduate Requirement: prevent broken form submission and provide validation alert
+    const form = document.querySelector("form");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // prevent submission to contact.html (broken URL)
 
-  // 11–12. Handle form submission and validation
-  const contactForm = document.querySelector("form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function(e) {
-      e.preventDefault(); // prevent broken submission
+        const nameInput = document.querySelector("#name");
+        const emailInput = document.querySelector("#email");
 
-      const nameInput = document.querySelector("#name");
-      const emailInput = document.querySelector("#email");
+        const name = nameInput?.value.trim();
+        const email = emailInput?.value.trim();
 
-      const name = nameInput?.value.trim();
-      const email = emailInput?.value.trim();
-
-      if (name && email) { 
-        alert(`Thank you, ${name}! We will be in touch with you shortly at ${email}.`);
-      } else {
-        alert("Please provide a name and email.");
-      }
-    });
+        // Show appropriate alert based on input presence
+        if (name && email) {
+          alert(`Thank you, ${name}! We will be in touch with you shortly at ${email}.`);
+        } else {
+          alert("Please provide a name and email.");
+        }
+      });
+    }
   }
+
+  // Execute all update functions
+  updateHero();
+  updateNavBarColor();
+  updateSectionHeadings();
+  updateServiceIcons();
+  updateDigitalMarketingIcon();
+  updateSolutionsLayout();
+  updateMusiciansImage();
+  validateContactForm();
 
 })();
