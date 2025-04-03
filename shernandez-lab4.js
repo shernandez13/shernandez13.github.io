@@ -65,5 +65,25 @@
   if (musicianImg) {
     musicianImg.src = "https://picsum.photos/id/453/400/300";
   }
- 
+
+  // 11–12. Handle form submission and validation
+  const contactForm = document.querySelector("form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function(e) {
+      e.preventDefault(); // prevent broken submission
+
+      const nameInput = document.querySelector("#name");
+      const emailInput = document.querySelector("#email");
+
+      const name = nameInput?.value.trim();
+      const email = emailInput?.value.trim();
+
+      if (name && email) {
+        alert(`Thank you, ${name}! We will be in touch with you shortly at ${email}.`);
+      } else {
+        alert("Please provide a name and email.");
+      }
+    });
+  }
+
 })();
