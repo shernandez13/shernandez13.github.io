@@ -6,18 +6,14 @@
   document.querySelector('#hero h1').textContent = "Uplift Your Brand with Stellar Marketing";
 
   // 2. Change the line of text below the hero headline
-  const subHeadline = document.querySelector("#hero p");
-  if (subHeadline) {
-    subHeadline.innerHTML = `Utilize cutting-edge strategies from Stellar Marketing to help your business <strong><em>thrive and excel.</em></strong>`;
-  }
+  document.querySelector('#hero p').innerHTML = "Utilize cutting-edge strategies from Stellar Marketing to help your business <strong><em>thrive</em></strong> and <strong><em>excel</em></strong>.";
 
   // 3. Change the background image in the hero section
-  const heroSection = document.querySelector("#hero");
-  if (heroSection) {
-    heroSection.style.backgroundImage = "url('https://picsum.photos/id/683/1280/720')";
-    heroSection.style.backgroundSize = "cover";
-    heroSection.style.backgroundPosition = "center";
+  const mainBackgroundImage = document.querySelector('section');
+  if (mainBackgroundImage) {
+    mainBackgroundImage.style.backgroundImage = "url('https://picsum.photos/id/683/1280/720')";
   }
+
 
   // 4. Change the navbar background color to match the footer's background
   const nav = document.querySelector("nav");
