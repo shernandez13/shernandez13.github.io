@@ -14,13 +14,12 @@
       <label for="billTotal">Bill Total ($):</label>
       <input type="text" id="billTotal" name="billTotal" placeholder="Enter bill total" required>
 
-      <!-- Tip Slider -->
-      <label for="tipSlider">Tip %:</label>
+      <!-- Tip Slider with Live Display -->
+      <div class="slider-label">
+        <label for="tipSlider">Tip %:</label>
+        <span id="tipLiveValue">0%</span>
+      </div>
       <input type="range" id="tipSlider" name="tipSlider" min="0" max="100" step="1">
-      
-      <!-- Display Tip Percentage -->
-      <label for="tipPercentage">Tip Percentage:</label>
-      <input type="text" id="tipPercentage" name="tipPercentage" disabled>
 
       <!-- Tip Amount -->
       <label for="tipAmount">Tip Amount:</label>
@@ -45,8 +44,8 @@
       <!-- Converted Total -->
       <label for="convertedTotal">Converted Total:</label>
       <input type="text" id="convertedTotal" disabled>
-
     </form>
+
     <p id="error" style="color: red;"></p>
   </main>
 
