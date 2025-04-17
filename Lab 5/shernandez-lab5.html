@@ -33,6 +33,19 @@
       <!-- Bill Total with Tax -->
       <label for="totalWithTax">Total with Tax (11%):</label>
       <input type="text" id="totalWithTax" name="totalWithTax" disabled>
+
+      <!-- Currency Conversion Dropdown -->
+      <label for="currency">Convert Total with Tip To:</label>
+      <select id="currency">
+        <option value="">-- Select Currency --</option>
+        <option value="inr">Indian Rupee (INR)</option>
+        <option value="eur">Euro (EUR)</option>
+      </select>
+
+      <!-- Converted Total -->
+      <label for="convertedTotal">Converted Total:</label>
+      <input type="text" id="convertedTotal" disabled>
+
     </form>
     <p id="error" style="color: red;"></p>
   </main>
