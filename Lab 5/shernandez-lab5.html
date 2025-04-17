@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shernandez-lab5 Tip Calculator</title>
+  <link rel="stylesheet" href="shernandez-lab5.css">
+</head>
+<body>
+  <main>
+    <h1>Tip Calculator</h1>
+    <form id="tip-form">
+      <!-- Bill Total -->
+      <label for="billTotal">Bill Total ($):</label>
+      <input type="text" id="billTotal" name="billTotal" placeholder="Enter bill total" required>
+
+      <!-- Tip Slider -->
+      <label for="tipSlider">Tip %:</label>
+      <input type="range" id="tipSlider" name="tipSlider" min="0" max="100" step="1">
+      
+      <!-- Display Tip Percentage -->
+      <label for="tipPercentage">Tip Percentage:</label>
+      <input type="text" id="tipPercentage" name="tipPercentage" disabled>
+
+      <!-- Tip Amount -->
+      <label for="tipAmount">Tip Amount:</label>
+      <input type="text" id="tipAmount" name="tipAmount" disabled>
+
+      <!-- Bill Total with Tip -->
+      <label for="totalWithTip">Total with Tip:</label>
+      <input type="text" id="totalWithTip" name="totalWithTip" disabled>
+
+      <!-- Bill Total with Tax -->
+      <label for="totalWithTax">Total with Tax (11%):</label>
+      <input type="text" id="totalWithTax" name="totalWithTax" disabled>
+    </form>
+    <p id="error" style="color: red;"></p>
+  </main>
+
+  <script src="shernandez-lab5.js"></script>
+</body>
+</html>
