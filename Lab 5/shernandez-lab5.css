@@ -1,0 +1,74 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2d9e6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  main {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 2px solid #993366;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Heading */
+  h1 {
+    color: #993366;
+    text-align: center;
+  }
+  
+  /* Form styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #993366;
+  }
+  
+  input[type="text"],
+  input[type="range"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Range slider */
+  input[type="range"] {
+    accent-color: #993366;
+  }
+  
+  /* Disabled fields */
+  input:disabled {
+    background-color: #e6e6e6;
+    color: #666;
+    border: 1px dashed #993366;
+  }
+  
+  /* Error message */
+  #error {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Mobile responsiveness */
+  @media screen and (max-width: 600px) {
+    main {
+      padding: 15px;
+    }
+  
+    input[type="text"],
+    input[type="range"] {
+      font-size: 1rem;
+    }
+  }
+  
