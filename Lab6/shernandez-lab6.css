@@ -12,4 +12,44 @@ body {
     background: #fff0f5;
 }
 
+h1 {
+    text-align: center;
+    color: #4b004b;
+}
   
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+  
+button {
+    padding: 10px;
+    background: #8e24aa;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+  
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+  
+.card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+  
+  .api-credit {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
