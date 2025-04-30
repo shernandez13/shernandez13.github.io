@@ -8,27 +8,25 @@ document.getElementById("getDataBtn").addEventListener("click", () => {
 
 //Helps set up fetchData() 
 async function fetchData(lat, lng) {
-    const endpoint = `https://api.sunrisesunset.io/json?lat=${lat}&lng=${lng}&date=today`;
+    const endpointToday = `https://api.sunrisesunset.io/json?lat=${lat}&lng=${lng}&date=today`;
+    const endpointTomorrow = `https://api.sunrisesunset.io/json?lat=${lat}&lng=${lng}&date=tomorrow`;
   
     try {
-      // Fetch today's data
-      const todayRes = await fetch(endpoint);
+      const todayRes = await fetch(endpointToday);
       const todayData = await todayRes.json();
   
-      // Fetch tomorrow's data
-      const tomorrowRes = await fetch(`https://api.sunrisesunset.io/json?lat=${lat}&lng=${lng}&date=tomorrow`);
+      const tomorrowRes = await fetch(endpointTomorrow);
       const tomorrowData = await tomorrowRes.json();
   
-      // Display both days
       displayResults(todayData.results, "todayCards");
       displayResults(tomorrowData.results, "tomorrowCards");
   
     } catch (err) {
-      console.error("API error:", err);
-      alert("Something went wrong while fetching data.");
+      console.error("Error fetching API data:", err);
+      alert("Error fetching data. Please try again later.");
     }
 }
-
+  
 //To display resulys
 function displayResults(data, containerId) {
     const container = document.getElementById(containerId);
@@ -51,6 +49,26 @@ function displayResults(data, containerId) {
       container.appendChild(card);
     });
 }
+
+//Geolocation Button Setup
+document.getElementById("geoBtn").addEventListener("click", () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser.");
+      return;
+    }
+  
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        fetchData(lat, lng); // reuse the same function as city lookup
+      },
+      (error) => {
+        console.error("Geolocation error:", error);
+        alert("Unable to retrieve your location.");
+      }
+    );
+});
   
 
   
