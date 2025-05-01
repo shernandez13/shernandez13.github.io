@@ -8,73 +8,73 @@ body {
 header {
   background-color: #660066;
   color: white;
-  padding: 1.5rem;
   text-align: center;
+  padding: 1.5rem;
   font-size: 1.8rem;
 }
 
-#controls {
+.controls {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  margin: 1.5rem;
   flex-wrap: wrap;
 }
 
 select, button {
   padding: 0.75rem 1rem;
   font-size: 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ccc;
 }
 
 button {
-  background: #d279a6;
+  background-color: #d279a6;
   color: white;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background: #c16798;
+  background-color: #c16798;
 }
 
-#dashboard {
+.cards {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
   padding: 1rem;
 }
 
-.day-section {
-  background: #fff0f5;
+.card {
+  background-color: #fff0f5;
+  border-radius: 16px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 1rem;
-  border-radius: 15px;
-  width: 320px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.day-section h2 {
   text-align: center;
+}
+
+.card h2 {
   background-color: #d9d9d9;
-  border-radius: 8px;
   padding: 0.5rem;
+  border-radius: 8px;
+  margin-top: 0;
 }
 
-.data-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem;
+.card-content {
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.data-grid div {
+.card-content div {
   background: white;
-  padding: 0.75rem;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  text-align: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.05);
 }
 
 .placeholder {
@@ -84,7 +84,14 @@ button:hover {
 
 footer {
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   padding: 1rem;
   margin-top: 2rem;
+}
+
+@media (max-width: 700px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
 }

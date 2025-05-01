@@ -12,7 +12,7 @@
   </header>
 
   <main>
-    <section id="controls">
+    <div class="controls">
       <select id="locationSelect">
         <option disabled selected>Select a location</option>
         <option value='{"lat":41.8781,"lng":-87.6298}'>Chicago, USA</option>
@@ -27,24 +27,28 @@
         <option value='{"lat":43.6532,"lng":-79.3832}'>Toronto, Canada</option>
       </select>
       <button id="currentLocationBtn">Use Current Location</button>
-    </section>
+    </div>
 
-    <section id="dashboard">
-      <div class="day-section" id="today">
+    <div class="cards">
+      <div class="card">
         <h2>Today</h2>
-        <div class="data-grid" id="todayData">
+        <div id="todayData" class="card-content">
           <p class="placeholder">Please select a location to view data.</p>
         </div>
       </div>
-      <div class="day-section" id="tomorrow">
+      <div class="card">
         <h2>Tomorrow</h2>
-        <div class="data-grid" id="tomorrowData">
+        <div id="tomorrowData" class="card-content">
           <p class="placeholder">Please select a location to view data.</p>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
   <footer>
-    <p>Data provided by <a href="https://sunrises
+    <p>Data courtesy of <a href="https://sunrisesunset.io/">sunrisesunset.io</a></p>
+  </footer>
 
+  <script src="shernandez-lab6.js"></script>
+</body>
+</html>
