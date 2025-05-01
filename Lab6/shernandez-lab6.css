@@ -39,56 +39,53 @@ button:hover {
   background-color: #c16798;
 }
 
-.cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+.cards-container {
+  background-color: #660066; /* dark purple */
+  color: #f9f4f8; /* pinkish text inside purple box */
+  border-radius: 16px;
   padding: 1rem;
+  margin: 1rem auto;
+  max-width: 900px;
 }
 
+.cards-container h2 {
+  color: #f9f4f8; /* pink label for TODAY / TOMORROW */
+  text-align: left;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+}
 
 .card {
-  background-color: #fff0f5;
-  border-radius: 16px;
-  width: 300px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 1rem;
+  background-color: #fff0f5; /* pink box */
+  color: #660066; /* purple text inside pink box */
+  border-radius: 12px;
+  padding: 0.75rem;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.card h2 {
-  background-color: #d9d9d9;
-  padding: 0.5rem;
-  border-radius: 8px;
-  margin-top: 0;
+.card h3 {
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0 0;
 }
 
-.card-content {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.card-content div {
-  background: white;
-  padding: 0.5rem;
-  border-radius: 8px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.05);
-}
-
-.placeholder {
-  font-style: italic;
-  color: gray;
+.card p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.85rem;
 }
 
 footer {
   text-align: center;
   font-size: 0.9rem;
   padding: 1rem;
-  margin-top: 2rem;
 }
+
 
 @media (max-width: 700px) {
   .cards {
