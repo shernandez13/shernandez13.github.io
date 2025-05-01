@@ -7,6 +7,8 @@
   <script src="shernandez-lab6.js"></script>
   <link rel="stylesheet" href="shernandez-lab6.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <img class="map-img" src="https://via.placeholder.com/200x120?text=Map" alt="Map placeholder">
+
 </head>
 <body>
     <div class="container">
@@ -29,11 +31,17 @@
           <button id="getDataBtn">Get Data</button>
           <button id="geoBtn">Use My Location</button>
         </div>
+
+        <div id="welcome" class="welcome-screen">
+            <h2>🌅 Select a city or use your location the beautiful sun!</h2>
+        </div>
+          
         <div class="results">
             <div id="today" class="day-section">
               <h2>Today</h2>
               <div class="cards" id="todayCards">
                 <!-- Insert today's data here -->
+                <img class="map-img" src="..." alt="Map of City">
               </div>
             </div>
       

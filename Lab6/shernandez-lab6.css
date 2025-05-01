@@ -48,8 +48,64 @@ button {
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
    
-  .api-credit {
+.api-credit {
     text-align: center;
     margin-top: 20px;
     font-size: 0.9em;
 }
+
+.day-section {
+    background-color: #4b004b;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.map-img {
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+  
+.welcome-screen {
+    background-color: #fbeffb;
+    border: 2px solid #d288d2;
+    padding: 30px;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 1.2em;
+    max-width: 700px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #6a1b9a;
+}
+   
+@media (max-width: 600px) {
+    .controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    select, button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    .container {
+      padding: 15px;
+    }
+  }
+  
