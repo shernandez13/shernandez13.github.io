@@ -1,64 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sunrise & Sunset Dashboard</title>
-  <script src="shernandez-lab6.js"></script>
-  <link rel="stylesheet" href="shernandez-lab6.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <img class="map-img" src="https://via.placeholder.com/200x120?text=Map" alt="Map placeholder">
-
+  <link rel="stylesheet" href="shernandez-lab6.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Sunrise & Sunset Dashboard</h1>
-    
-        <div class="controls">
-          <select id="citySelect">
-            <option value="">Select a city</option>
-            <option value="41.8781° N, 87.6298° W">Chicago</option>
-            <option value="34.0549° N, 118.2426° W">Los Angeles</option>
-            <option value="33.4482° N, 112.0777° W">Phoenix</option>
-            <option value="25.7617° N, 80.1918° W">Miami</option>
-            <option value="40.7128° N, 74.0060° W">New York</option>
-            <option value="38.9072° N, 77.0369° W">Washington DC</option>
-            <option value="37.7749° N, 122.4194° W">San Francisco</option>
-            <option value="47.6061° N, 122.3328° W">Seattle</option>
-            <option value="29.7601° N, 95.3701° W">Houston</option>
-            <option value="39.7392° N, 104.9903° W">Denver</option>
-          </select>
-          <button id="getDataBtn">Get Data</button>
-          <button id="geoBtn">Use My Location</button>
-        </div>
+  <header>
+    <h1>Sunrise & Sunset Dashboard</h1>
+  </header>
 
-        <div id="welcome" class="welcome-screen">
-            <h2>🌅 Select a city or use your location the beautiful sun!</h2>
-        </div>
-          
-        <div class="results">
-            <div id="today" class="day-section">
-              <h2>Today</h2>
-              <div class="cards" id="todayCards">
-                <!-- Insert today's data here -->
-                <img class="map-img" src="..." alt="Map of City">
-              </div>
-            </div>
-      
-            <div id="tomorrow" class="day-section">
-              <h2>Tomorrow</h2>
-              <div class="cards" id="tomorrowCards">
-                <!-- Insert tomorrow's data here -->
-              </div>
-            </div>
-          </div>
-      
-          <div class="api-credit">
-            Data courtesy of <a href="https://sunrise-sunset.org" target="_blank">sunrise-sunset.org</a>
-          </div>
-        </div>
-      
-        <script src="shernandez-lab6.js"></script>
+  <main>
+    <section id="controls">
+      <select id="locationSelect">
+        <option disabled selected>Select a location</option>
+        <option value='{"lat":41.8781,"lng":-87.6298}'>Chicago, USA</option>
+        <option value='{"lat":51.5074,"lng":-0.1278}'>London, UK</option>
+        <option value='{"lat":35.6895,"lng":139.6917}'>Tokyo, Japan</option>
+        <option value='{"lat":-33.8688,"lng":151.2093}'>Sydney, Australia</option>
+        <option value='{"lat":30.0444,"lng":31.2357}'>Cairo, Egypt</option>
+        <option value='{"lat":-22.9068,"lng":-43.1729}'>Rio de Janeiro, Brazil</option>
+        <option value='{"lat":48.8566,"lng":2.3522}'>Paris, France</option>
+        <option value='{"lat":19.0760,"lng":72.8777}'>Mumbai, India</option>
+        <option value='{"lat":-33.9249,"lng":18.4241}'>Cape Town, South Africa</option>
+        <option value='{"lat":43.6532,"lng":-79.3832}'>Toronto, Canada</option>
+      </select>
+      <button id="currentLocationBtn">Use Current Location</button>
+    </section>
 
-</body>
-</html>
+    <section id="dashboard">
+      <div class="day-section" id="today">
+        <h2>Today</h2>
+        <div class="data-grid" id="todayData">
+          <p class="placeholder">Please select a location to view data.</p>
+        </div>
+      </div>
+      <div class="day-section" id="tomorrow">
+        <h2>Tomorrow</h2>
+        <div class="data-grid" id="tomorrowData">
+          <p class="placeholder">Please select a location to view data.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data provided by <a href="https://sunrises
+

@@ -1,111 +1,90 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f4f8;
-    color: #222;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f4f8;
+  color: #222;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff0f5;
+header {
+  background-color: #660066;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
 }
 
-h1 {
-    text-align: center;
-    color: #4b004b;
+#controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
 }
-  
-.controls {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 20px;
+
+select, button {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
-  
+
 button {
-    padding: 10px;
-    background: #8e24aa;
-    color: white;
-    border: none;
-    cursor: pointer;
+  background: #d279a6;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
-  
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+
+button:hover {
+  background: #c16798;
 }
-  
-.card {
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    width: 120px;
-    text-align: center;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-   
-.api-credit {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9em;
+
+#dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
 }
 
 .day-section {
-    background-color: #4b004b;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    color: white;
+  background: #fff0f5;
+  padding: 1rem;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.map-img {
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+.day-section h2 {
+  text-align: center;
+  background-color: #d9d9d9;
+  border-radius: 8px;
+  padding: 0.5rem;
 }
-  
-.welcome-screen {
-    background-color: #fbeffb;
-    border: 2px solid #d288d2;
-    padding: 30px;
-    margin: 20px auto;
-    text-align: center;
-    border-radius: 12px;
-    font-size: 1.2em;
-    max-width: 700px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    color: #6a1b9a;
+
+.data-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
-   
-@media (max-width: 600px) {
-    .controls {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  
-    select, button {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  
-    .cards {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .card {
-      width: 90%;
-    }
-  
-    h1 {
-      font-size: 1.5rem;
-    }
-  
-    .container {
-      padding: 15px;
-    }
-  }
-  
+
+.data-grid div {
+  background: white;
+  padding: 0.75rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.placeholder {
+  font-style: italic;
+  color: gray;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 1rem;
+  margin-top: 2rem;
+}
